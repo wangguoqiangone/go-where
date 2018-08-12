@@ -2,7 +2,7 @@
 	<div>
 		<div class="title">周末去哪儿</div>
 		<ul>
-			<li calss="item" v-for="item of List" :key="item.id">
+			<li calss="item" v-for="item of list" :key="item.id">
 				<div class="item-img-wrapper">
 					<img class="item-img" :src="item.imgUrl" />
 				</div>
@@ -18,30 +18,8 @@
 <script>
 export default {
 	name: 'HomeWeekend',
-	data () {
-		return {
-			List: [{
-				id: '0001',
-				imgUrl: 'https://dimg19.c-ctrip.com/images/10020e00000070mc3FB1C_C_500_280_Q90.jpg',
-				title: '这是一个标题',
-				desc: '这是一个标题这是一个标题这是一个标题这是一个标题这是一个标题这是一个标题这是一个标题'
-			},{
-				id: '0002',
-				imgUrl: 'https://dimg19.c-ctrip.com/images/10020e00000070mc3FB1C_C_500_280_Q90.jpg',
-				title: '这是一个标题',
-				desc: '这是一个标题这是一个标题这是一个标题这是一个标题这是一个标题这是一个标题这是一个标题'
-			},{
-				id: '0003',
-				imgUrl: 'https://dimg19.c-ctrip.com/images/10020e00000070mc3FB1C_C_500_280_Q90.jpg',
-				title: '这是一个标题',
-				desc: '这是一个标题这是一个标题这是一个标题这是一个标题这是一个标题这是一个标题这是一个标题'
-			},{
-				id: '0004',
-				imgUrl: 'https://dimg19.c-ctrip.com/images/10020e00000070mc3FB1C_C_500_280_Q90.jpg',
-				title: '这是一个标题',
-				desc: '这是一个标题这是一个标题这是一个标题这是一个标题这是一个标题这是一个标题这是一个标题'
-			}]
-		}
+	props: {
+		list: Array
 	}
 }
 </script>

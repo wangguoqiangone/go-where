@@ -22,61 +22,13 @@
 <script>
 export default {
 	name: 'HomeIcons',
-	data () {
-		return {
-			iconList: [{
-					id: '0001',
-					imgUrl: 'https://pages.ctrip.com/hotel_h5/res/img/index-inn.png?20180731191122j',
-					desc: '景点门票'
-				},{
-					id: '0002',
-					imgUrl: 'https://pages.ctrip.com/hotel_h5/res/img/index-hourroom.png?20180731191122j',
-					desc: '哈撒ki'
-
-
-				},{
-					id: '0003',
-					imgUrl: 'https://pages.ctrip.com/hotel_h5/res/img/index-hourroom.png?20180731191122j',
-					desc: '哈撒ki'
-				},{
-					id: '0004',
-					imgUrl: 'https://pages.ctrip.com/hotel_h5/res/img/index-find.png?20180731191122j',
-					desc: '哈撒ki'
-				},{
-					id: '0005',
-					imgUrl: 'https://pages.ctrip.com/hotel_h5/res/img/index-hourroom.png?20180731191122j',
-					desc: '哈撒ki'
-
-
-				},{
-					id: '0006',
-					imgUrl: 'https://pages.ctrip.com/hotel_h5/res/img/index-hourroom.png?20180731191122j',
-					desc: '哈撒ki'
-				},{
-					id: '0007',
-					imgUrl: 'https://pages.ctrip.com/hotel_h5/res/img/index-find.png?20180731191122j',
-					desc: '哈撒ki'
-				},{
-					id: '0008',
-					imgUrl: 'https://pages.ctrip.com/hotel_h5/res/img/index-hourroom.png?20180731191122j',
-					desc: '哈撒ki'
-
-
-				},{
-					id: '0009',
-					imgUrl: 'https://pages.ctrip.com/hotel_h5/res/img/index-hourroom.png?20180731191122j',
-					desc: '哈撒ki'
-				},{
-					id: '0010',
-					imgUrl: 'https://pages.ctrip.com/hotel_h5/res/img/index-find.png?20180731191122j',
-					desc: '哈撒ki'
-				}]
-		}
+	props: {
+		list: Array
 	},
 	computed: {
 		pages () {
 			const pages = []
-			this.iconList.forEach((item, index) => {
+			this.list.forEach((item, index) => {
 				const page = Math.floor(index / 8)
 				if(!pages[page]) {
 					pages[page] = []
