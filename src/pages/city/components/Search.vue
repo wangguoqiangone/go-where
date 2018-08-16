@@ -18,6 +18,7 @@
 				class="search-item border-bottom" 
 				v-for="item of list"
 				:key="item.id"
+				@click="handleCityClick(item.name)"
 			>
 				{{item.name}}
 			</li>
@@ -30,6 +31,7 @@
 </template>
 
 <script>
+import { mapState, mapMutations } from 'vuex'
 import Bscroll from 'better-scroll'
 export default {
 	name: 'CitySearch',
@@ -42,6 +44,14 @@ export default {
 			list: [],
 			timer: null
 		}
+	},
+	methods: {
+		handleCityClick (city) {
+			/*this.$store.commit('changeCity', city)*/
+			this.changeCity(city)
+			this.$router.push('/')
+		},
+		...mapMutations(['changeCity'])
 	},
 	mounted () {
 		this.scroll = new Bscroll(this.$refs.search)
