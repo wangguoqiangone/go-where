@@ -1,17 +1,17 @@
 <template>
 	<div>
 		<div class="banner" @click="handleBannerClick">
-			<img class="banner-img" src="https://dimg04.c-ctrip.com/images/300e0q000000g5o8b658A_C_500_280.jpg" alt="">
+			<img class="banner-img" :src="bannerImg" alt="">
 			<div class="banner-info">
-				<div class="banner-title">国家AAAAA级景区</div>
+				<div class="banner-title">{{this.sightName}}</div>
 				<div class="banner-number">
 					<span class="iconfont banner-icon">&#xe64b;</span>
-					39
+					{{this.bannerImages.length}}
 				</div>
 			</div>
 		</div>
 		<common-gallary 
-			:imgs="imgs" 
+			:imgs="bannerImages" 
 			v-show="showGallary"
 			@close="handleGallaryClose"
 		></common-gallary>
@@ -23,12 +23,13 @@ import CommonGallary from '../../../common/gallary/Gallary'
 export default {
 	name: 'DetailBanner',
 	props: {
-		bannerImgs: Array
+		sightName: String,
+		bannerImg: String,
+		bannerImages: Array
 	},
 	data () {
 		return {
-			showGallary: false,
-			imgs: ['https://dimg19.c-ctrip.com/images/10020c000000612i4DDF0_C_500_280.jpg','https://dimg19.c-ctrip.com/images/fd/tg/g4/M0A/32/EE/CggYHlXDE7GAZ7cxADadFdzXxvE947_C_500_280.jpg']
+			showGallary: false
 		}
 	},
 	methods: {
