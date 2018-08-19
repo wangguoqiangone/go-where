@@ -1,29 +1,35 @@
 <template>
-	<div>
+	<div class="container">
 		<detail-banner
 			:sightName="sightName"
 			:bannerImg="bannerImg"
 			:bannerImgs="gallaryImgs"
 		></detail-banner>
 		<detail-header></detail-header>
+		<div class="content">
+			<detail-list :list="list"></detail-list>
+		</div>
 	</div>
 </template>
 
 <script>
 import DetailBanner from './components/Banner'
 import DetailHeader from './components/Header'
+import DetailList from './components/List'
 import axios from 'axios'
 export default {
 	name: "Detail",
 	components: {
 		DetailBanner,
-		DetailHeader
+		DetailHeader,
+		DetailList
 	},
 	data () {
 		return {
 			sightName: '',
 			bannerImg: '',
-			gallaryImgs: []
+			gallaryImgs: [],
+			list: []
 		}
 	},
 	methods: {
@@ -41,6 +47,7 @@ export default {
 				this.sightName = data.sightName
 				this.bannerImg = data.bannerImg
 				this.gallaryImgs = data.gallaryImgs
+				this.list = data.categoryList
 			}
 		}
 	},
@@ -51,5 +58,6 @@ export default {
 </script>
 	
 <style lang="stylus" scoped>
-	
+	.container
+		height: 50rem
 </style>
