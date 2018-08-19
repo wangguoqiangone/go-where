@@ -52,10 +52,10 @@ export default {
 			color: #ccc
 		.header-right
 			float: right
-			width: 1.24rem
+			width: 1.14rem
 			text-aligin: center
 			color: #fff
 			.arrow-icon
-				margin-left: -.04rem
+				margin-left: -.02rem
 				font-size: .24rem
 </style>
