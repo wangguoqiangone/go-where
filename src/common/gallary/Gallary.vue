@@ -2,7 +2,6 @@
 	<div class="container" @click="handleGallaryClose">
 		<div class="wrapper">
 			<swiper :options="swiperOptions">
-        <!-- slides -->
         <swiper-slide
 					v-for="(item, index) in imgs"
 					:key="index"

@@ -1,5 +1,4 @@
 <template>
-	
 	<div class="icons"><!-- 用来做宽高比例2:1 -->
 		<swiper>
 			<swiper-slide v-for="(page, index) of pages" :key="index">
@@ -63,11 +62,12 @@ export default {
 				left: 0
 				right: 0
 				bottom: .44rem
+				box-sizing: border-box
+				padding: .1rem
 				.icon-img-content
-					height: 0
+					width: 100%
 					display: block
 					margin: 0 auto
-					height: 100%
 			.icon-desc
 				position: absolute
 				left: 0
@@ -78,5 +78,4 @@ export default {
 				text-align: center
 				color: $darkTextColor
 				ellipsis()
-
 </style>
